@@ -1,0 +1,9 @@
+name: aws-mwaa-local-runner
+metaData:
+  domain:
+    name: aws-mwaa-local-runner
+    owningTeam: DataEng
+    jira: DATAENG
+    primaryContact: yuguang.zhang@lark.com
+  codeOwnerFile: ./CODEOWNERS
+  documentationIndexPage: 'https://github.com/LarkTechnologies/aws-mwaa-local-runner'
