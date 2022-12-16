@@ -1,0 +1,17 @@
+{
+    "AWS_EMR_CONN": "FAKEAWSEMRConnection",
+    "STANDARD_EMR_BOOTSTRAP_SCRIPT": "s3://fake-lark-packages/emr_packages/config/emr_bootstrap.sh",
+    "EMROPERATOR_LOG_URI": "s3://fake-lark-emr-logs/jobFlow",
+    "EMROPERATOR_SERVICE_ROLE": "FAKENightowl_EMR_DefaultRole",
+    "EMROPERATOR_JOB_FLOW_ROLE": "FAKENightowl_EMR_EC2_DefaultRole",
+    "SEQUENTIALPYSPARKEMRJOB_DEFAULT_BOOTSTRAP_SCRIPT": "s3://fake-lark-packages/emr_packages/config/emr_bootstrap.sh",
+    "BIGBIRDSTEP_DEFAULT_JARS": "[\"s3://fake-lark-packages/emr_packages/jars/snowflake-jdbc-3.12.3.jar\",\"s3://fake-lark-packages/emr_packages/jars/spark-snowflake_2.12-2.7.0-spark_2.4.jar\",\"s3://fake-lark-packages/emr_packages/jars/glueScripts-app.jar\"]",
+    "BIGBIRDEMR63STEP_DEFAULT_JARS": "[\"s3://fake-lark-packages/emr_packages/jars/snowflake-jdbc-3.13.8.jar\",\"s3://fake-lark-packages/emr_packages/jars/spark-snowflake_2.12-2.9.1-spark_3.1.jar\",\"s3://fake-lark-packages/emr_packages/jars/delta-core_2.12-1.0.0.jar\"]",
+    "DEFAULT_DATABRICKS_INSTANCE_PROFILE_ARN": "fakearn:aws:iam::790110701330",
+    "LARKACCOUNTS_LEGACY": "FAKE727799750006",
+    "LARKACCOUNTS_PROD": "FAKE374426382232",
+    "LARKACCOUNTS_PROD_DATA": "FAKE801957789475",
+    "EMRCLUSTERSPECIFICATION_DEFAULT_KEYPAIR": "data-eng-emr-fake-key",
+    "EMRCLUSTERSPECIFICATION_DEFAULT_SECURITY_GROUPS": "[\"sg-abc\", \"sg-def\", \"sg-ghi\"]",
+    "EMRCLUSTERSPECIFICATION_DEFAULT_SUBNETS": "[\"subnet-abc\"]"
+}
