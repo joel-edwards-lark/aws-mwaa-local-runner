@@ -145,6 +145,9 @@ case "$1" in
     sleep 2
     airflow db init
     ;;
+  test-task)
+     airflow tasks test ses_email_test test_email 2022-07-21
+    ;;
   test-requirements)
     # if S3_REQUIREMENTS_PATH
     if [ -n "$S3_REQUIREMENTS_PATH" ]; then

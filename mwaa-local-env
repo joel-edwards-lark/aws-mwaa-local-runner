@@ -60,6 +60,16 @@ case "$1" in
 validate-prereqs)
    validate_prereqs
    ;;
+test-task)
+   BUILT_IMAGE=$(docker images -q amazon/mwaa-local:$AIRFLOW_VERSION)
+   if [[ -n "$BUILT_IMAGE" ]]; then
+     echo "Container amazon/mwaa-local:$AIRFLOW_VERSION exists. Skipping build"
+   else
+     echo "Container amazon/mwaa-local:$AIRFLOW_VERSION not built. Building locally."
+     build_image
+   fi
+   docker run -v $(pwd)/dags:/usr/local/airflow/dags -it amazon/mwaa-local:$AIRFLOW_VERSION test-dag
+   ;;
 test-requirements)
    BUILT_IMAGE=$(docker images -q amazon/mwaa-local:$AIRFLOW_VERSION)
    if [[ -n "$BUILT_IMAGE" ]]; then
