@@ -1,0 +1,2 @@
+-r /usr/local/airflow/dags/codeartifact.txt
+-r /usr/local/airflow/dags/requirements.txt

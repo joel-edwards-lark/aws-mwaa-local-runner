@@ -16,7 +16,7 @@ CODEARTIFACT_AUTH_TOKEN=$(aws --region=us-east-1 codeartifact get-authorization-
 echo "--extra-index-url https://aws:${CODEARTIFACT_AUTH_TOKEN}@lark-509967626473.d.codeartifact.us-east-1.amazonaws.com/pypi/data-eng-pypi/simple/" > codeartifact_local.txt
 cd $mwaaDir
 # Then copy the group of requirements files
-cp ../data-airflow-dags-v2/*.txt dags
+cp ../data-airflow-dags-v2/*.txt docker/config
 # This command will install the requirements from the file:
 ./mwaa-local-env test-requirements
 #

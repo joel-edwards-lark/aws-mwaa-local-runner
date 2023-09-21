@@ -30,6 +30,7 @@ COPY script/shell-launch-script.sh /shell-launch-script.sh
 COPY script/verification.sh /verification.sh
 COPY config/constraints.txt /constraints.txt
 COPY config/mwaa-base-providers-requirements.txt /mwaa-base-providers-requirements.txt
+COPY config/requirements-local.txt /requirements-local.txt
 
 RUN chmod u+x /systemlibs.sh && /systemlibs.sh
 RUN chmod u+x /bootstrap.sh && /bootstrap.sh
