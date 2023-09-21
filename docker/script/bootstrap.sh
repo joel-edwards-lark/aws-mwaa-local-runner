@@ -90,8 +90,12 @@ yum install -y unixODBC-devel
 if [ -n "${PYTHON_DEPS}" ]; then sudo -u airflow pip3 install $PIP_OPTION "${PYTHON_DEPS}"; fi
 
 MWAA_BASE_PROVIDERS_FILE=/mwaa-base-providers-requirements.txt
+LARK_REQUIREMENTS=/requirements-local.txt
 echo "Installing providers supported for airflow version ${AIRFLOW_VERSION}"
-sudo -u airflow pip3 install --constraint /constraints.txt $PIP_OPTION -r $MWAA_BASE_PROVIDERS_FILE
+# sudo -u airflow pip3 install --constraint /constraints.txt $PIP_OPTION -r $MWAA_BASE_PROVIDERS_FILE
+sudo pip3 install --upgrade pip
+sudo pip3 install --upgrade setuptools cython
+sudo -u airflow pip3 install --constraint /constraints.txt $PIP_OPTION -r $LARK_REQUIREMENTS
 
 # jq is used to parse json
 yum install -y jq

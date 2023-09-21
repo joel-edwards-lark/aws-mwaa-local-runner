@@ -21,6 +21,7 @@ ARG INDEX_URL=""
 ENV AIRFLOW_HOME=${AIRFLOW_USER_HOME}
 ENV PATH="$PATH:/usr/local/airflow/.local/bin:/root/.local/bin:/usr/local/airflow/.local/lib/python3.10/site-packages"
 ENV PYTHON_VERSION=3.10.9
+ENV TAGGED_VERSION=2.2.1
 
 COPY script/bootstrap.sh /bootstrap.sh
 COPY script/systemlibs.sh /systemlibs.sh
@@ -31,8 +32,14 @@ COPY script/verification.sh /verification.sh
 COPY config/constraints.txt /constraints.txt
 COPY config/mwaa-base-providers-requirements.txt /mwaa-base-providers-requirements.txt
 COPY config/requirements-local.txt /requirements-local.txt
+COPY config/requirements.txt /requirements.txt
+COPY config/codeartifact_local.txt /codeartifact_local.txt
 
 RUN chmod u+x /systemlibs.sh && /systemlibs.sh
+# RUN pip install --upgrade pip
+# RUN pip install --upgrade setuptools cython
+RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade setuptools cython
 RUN chmod u+x /bootstrap.sh && /bootstrap.sh
 RUN chmod u+x /generate_key.sh && /generate_key.sh
 RUN chmod u+x /run-startup.sh

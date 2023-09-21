@@ -1,4 +1,6 @@
-# About aws-mwaa-local-runner
+# About aws-mwaa-local-runner (LARK)
+
+This repo is a fork of aws's [aws-mwaa-local-runner](https://github.com/aws/aws-mwaa-local-runner).
 
 This repository provides a command line interface (CLI) utility that replicates an Amazon Managed Workflows for Apache Airflow (MWAA) environment locally.
 
@@ -43,6 +45,14 @@ LICENSE
 mwaa-local-env
 README.md
 VERSION
+```
+
+
+## Importing Lark DAGs
+Run these commands
+```bash
+aws-login infra
+./import-lark-dags.sh
 ```
 
 ## Prerequisites
