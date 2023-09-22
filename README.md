@@ -47,14 +47,6 @@ README.md
 VERSION
 ```
 
-
-## Importing Lark DAGs
-Run these commands
-```bash
-aws-login infra
-./import-lark-dags.sh
-```
-
 ## Prerequisites
 
 - **macOS**: [Install Docker Desktop](https://docs.docker.com/desktop/).
@@ -66,6 +58,13 @@ aws-login infra
 ```bash
 git clone https://github.com/aws/aws-mwaa-local-runner.git
 cd aws-mwaa-local-runner
+```
+
+### Step Zero: Importing Lark DAGs
+Run these commands
+```bash
+aws-login infra
+./import-lark-dags.sh
 ```
 
 ### Step one: Building the Docker image

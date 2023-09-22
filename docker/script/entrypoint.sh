@@ -30,6 +30,8 @@ install_requirements() {
               echo "WARNING: Constraints should be specified for requirements.txt. Please see https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html#working-dags-dependencies-test-create"
           fi
       fi    
+        export TAGGED_VERSION=2.2.1
+        python3 --version
         pip3 install --upgrade pip
         echo "Installing requirements.txt"
         pip3 install --user -r "$AIRFLOW_HOME/$REQUIREMENTS_FILE"
@@ -139,6 +141,8 @@ case "$1" in
       sleep 2
     fi
     airflow users create -r Admin -u admin -e admin@example.com -f admin -l user -p $DEFAULT_PASSWORD
+    airflow variables import /variables.json
+    airflow connections import /connections.json
     exec airflow webserver
     ;;
   resetdb)

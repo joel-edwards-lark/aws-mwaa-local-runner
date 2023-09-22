@@ -34,6 +34,9 @@ COPY config/mwaa-base-providers-requirements.txt /mwaa-base-providers-requiremen
 COPY config/requirements-local.txt /requirements-local.txt
 COPY config/requirements.txt /requirements.txt
 COPY config/codeartifact_local.txt /codeartifact_local.txt
+COPY config/pipenv-requirements.txt /pipenv-requirements.txt
+COPY config/variables.json /variables.json
+COPY config/connections.json /connections.json
 
 RUN chmod u+x /systemlibs.sh && /systemlibs.sh
 # RUN pip install --upgrade pip
@@ -53,7 +56,6 @@ COPY config/webserver_config.py ${AIRFLOW_USER_HOME}/webserver_config.py
 
 RUN chown -R airflow: ${AIRFLOW_USER_HOME}
 RUN chmod +x /entrypoint.sh
-
 EXPOSE 8080 5555 8793
 
 USER airflow

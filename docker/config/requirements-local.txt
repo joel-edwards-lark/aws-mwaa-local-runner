@@ -1,3 +1,4 @@
+-r ./pipenv-requirements.txt
 -r ./codeartifact_local.txt
 -r ./requirements.txt
 apache-airflow==2.6.3
@@ -5,5 +6,4 @@ mock
 moto[emr]
 pytest
 pytest-mock
-soliddags==2.2.1
 typing_extensions==4.7.1

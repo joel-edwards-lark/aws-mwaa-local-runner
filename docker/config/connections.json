@@ -1,0 +1,8 @@
+[
+  {
+    "conn_id": "slack",
+    "conn_type": "http",
+    "host": "https://slack.com/api/",
+    "password": "YOUR_SLACK_API_TOKEN"
+  }
+]
